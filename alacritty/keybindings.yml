@@ -1,0 +1,43 @@
+# D: Split vertically
+# Shift D: Split horizontally
+# T: Open new tab (session)
+# W: Close current pan Control + a x y
+
+# Cmd + A = \x01
+
+key_bindings:
+  - { key: Q, mods: Command, action: None }
+
+  - { key: D, mods: Command, chars: "\x01\x25" } # Split window vertically
+  - { key: D, mods: Command|Shift, chars: "\x01\x22" } #  Split window horizontally
+
+  # - { key: H, mods: Command, chars: "\x01\x68" } # Switch to left panel
+  # - { key: L, mods: Command, chars: "\x01\x6c" } # Switch to left panel
+  # - { key: J, mods: Command, chars: "\x01\x6a" } # Switch to left panel
+  # - { key: K, mods: Command, chars: "\x01\x6b" } # Switch to left panel
+
+  - { key: E, mods: Control, action: ClearHistory }
+
+  - { key: T, mods: Command, chars: "\x01\x63" } # Create new tab
+
+  - { key: 36, mods: Command, chars: "\x01\x7a" } # Focus on current panel
+
+  - { key: Tab, mods: Control, chars: "\x01\x6e" } # Close current panel / window
+  - { key: Tab, mods: Control|Shift, chars: "\x01\x70" } # Close current panel / window
+
+  - { key: Key1, mods: Command, chars: "\x01\x31" } # Go to Window 1
+  - { key: Key2, mods: Command, chars: "\x01\x32" } # Go to Window 2
+  - { key: Key3, mods: Command, chars: "\x01\x33" } # Go to Window 3
+  - { key: Key4, mods: Command, chars: "\x01\x34" } # Go to Window 4
+  - { key: Key5, mods: Command, chars: "\x01\x35" } # Go to Window 5
+  - { key: Key6, mods: Command, chars: "\x01\x36" } # Go to Window 6
+  - { key: Key7, mods: Command, chars: "\x01\x37" } # Go to Window 7
+  - { key: Key8, mods: Command, chars: "\x01\x38" } # Go to Window 8
+  - { key: Key9, mods: Command, chars: "\x01\x39" } # Go to Window 9
+
+  - { key: W, mods: Command, chars: "\x01\x78" } # Close current panel / window
+
+
+    # New tab Cmd + t
+    # Window transitions hjkl, if define k, then you'll need to find a new way to clear terminal without Cmd + k keybinding
+    # Switch tabs with Control + tab
