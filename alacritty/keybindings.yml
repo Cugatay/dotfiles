@@ -16,8 +16,6 @@ key_bindings:
   # - { key: J, mods: Command, chars: "\x01\x6a" } # Switch to left panel
   # - { key: K, mods: Command, chars: "\x01\x6b" } # Switch to left panel
 
-  - { key: E, mods: Control, action: ClearHistory }
-
   - { key: T, mods: Command, chars: "\x01\x63" } # Create new tab
 
   - { key: 36, mods: Command, chars: "\x01\x7a" } # Focus on current panel
