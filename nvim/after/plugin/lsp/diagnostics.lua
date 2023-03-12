@@ -5,14 +5,14 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-  underline = true,
-  update_in_insert = false,
-  virtual_text = { spacing = 4, prefix = "●" },
-  severity_sort = true,
-}
-)
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--   vim.lsp.diagnostic.on_publish_diagnostics, {
+--   underline = true,
+--   update_in_insert = false,
+--   virtual_text = { spacing = 4, prefix = "●" },
+--   severity_sort = true,
+-- }
+-- )
 
 ------------------------------------------------------
 -- vim.diagnostic.config({
@@ -24,3 +24,15 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 --     source = "always", -- Or "if_many"
 --   },
 -- })
+
+vim.diagnostic.config({
+  virtual_text = {
+    -- source = "always",  -- Or "if_many"
+    prefix = '●', -- Could be '■', '▎', 'x'
+  },
+  severity_sort = true,
+  update_in_insert = true,
+  float = {
+    source = "always", -- Or "if_many"
+  },
+})
