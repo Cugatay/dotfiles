@@ -36,3 +36,7 @@ if status is-interactive
 end
 
 source /Users/cagataykaydir/.docker/init-fish.sh || true # Added by Docker Desktop
+
+# tabtab source for packages
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
