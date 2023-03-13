@@ -41,6 +41,7 @@ packer.startup(function(use)
   use 'windwp/nvim-ts-autotag' -- Automatically close ts tags -- TODO
   use 'leafOfTree/vim-matchtag' -- Match and highlight tags (In vimscript)
   use 'numToStr/Comment.nvim' -- Toggle Comment out
+  use 'JoosepAlviste/nvim-ts-context-commentstring' -- Comment out tsx
   use 'norcalli/nvim-colorizer.lua' -- Colorize rgb and hex codes
   use 'rmagatti/auto-session'
   -- ---------------------------------------------------------

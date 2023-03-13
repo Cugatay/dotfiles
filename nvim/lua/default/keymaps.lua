@@ -31,4 +31,16 @@ keymap.set('n', '-', '<C-x>')
 -- Copy to clipboard
 keymap.set('v', " y", '"+y')
 
+-- keymap.set('v', "[", '<Nop>')
+-- keymap.set('v', "]", '<Nop>')
+
+-- Sorround natively
+keymap.set('v', '(', 'di()<ESC>hp')
+keymap.set('v', '{', 'di{}<ESC>hp')
+keymap.set('v', '[', 'di[]<ESC>hp')
+keymap.set('v', '\'', 'di\'\'<ESC>hp')
+keymap.set('v', '"', 'di""<ESC>hp')
+keymap.set('v', '<', 'di<><ESC>hp')
+
+
 -- keymap.set('n', "<C-i>", "yiw :%s/<C-R><C-W>/")

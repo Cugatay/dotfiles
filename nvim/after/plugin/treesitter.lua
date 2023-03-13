@@ -16,7 +16,14 @@ ts.setup {
     additional_vim_regex_highlighting = false,
   },
 
+  -- Plugins
+
   autotag = {
     enable = true,
+  },
+
+  context_commentstring = {
+    enable = true
   }
+
 }
