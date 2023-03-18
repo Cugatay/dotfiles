@@ -6,6 +6,9 @@ if status is-interactive
 	# For LazyGit
 	alias lg="lazygit"
 
+  # For better ls
+  alias ls="exa --icons --group-directories-first"
+
 	# set -gx EDITOR nvim
 
 	# System Bin

@@ -6,10 +6,18 @@ shell:
 
 window:
   decorations: none
+  # opacity: 0.5
 
 font:
   normal:
-    family: MesloLGLDZ Nerd Font Mono
+    family: MesloLGM Nerd Font Mono
+  bold:
+    family: MesloLGM Nerd Font Mono
+  italic:
+    family: MesloLGM Nerd Font Mono
+  bold_italic:
+    family: MesloLGM Nerd Font Mono
+  size: 12.0
 
 colors:
   primary:

@@ -27,7 +27,7 @@ end
 
 vim.diagnostic.config({
   virtual_text = {
-    -- source = "always",  -- Or "if_many"
+    -- source = "always", -- Or "if_many"
     prefix = '●', -- Could be '■', '▎', 'x'
   },
   severity_sort = true,

@@ -10,7 +10,7 @@ local mappings = {
   ['<C-f>'] = cmp.mapping.confirm({ select = true }),
   ['ƒ'] = cmp.mapping.confirm({ select = true }),
   ['<C-e>'] = cmp.mapping.scroll_docs( -4),
-  ['<C-r>'] = cmp.mapping.scroll_docs(4),
+  ['<C-d>'] = cmp.mapping.scroll_docs(4),
   ['<C-Space>'] = cmp.mapping.complete()
 }
 

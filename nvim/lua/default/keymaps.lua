@@ -35,12 +35,23 @@ keymap.set('v', " y", '"+y')
 -- keymap.set('v', "]", '<Nop>')
 
 -- Sorround natively
-keymap.set('v', '(', 'di()<ESC>hp')
-keymap.set('v', '{', 'di{}<ESC>hp')
-keymap.set('v', '[', 'di[]<ESC>hp')
-keymap.set('v', '\'', 'di\'\'<ESC>hp')
-keymap.set('v', '"', 'di""<ESC>hp')
-keymap.set('v', '<', 'di<><ESC>hp')
+keymap.set('v', '(', 'c()<ESC>hp')
+keymap.set('n', 'c(', 'ci(<ESC>2"_xP`[v`]')
 
+keymap.set('v', '{', 'c{}<ESC>hp')
+keymap.set('n', 'c{', 'ci{<ESC>2"_xP`[v`]')
 
--- keymap.set('n', "<C-i>", "yiw :%s/<C-R><C-W>/")
+keymap.set('v', '[', 'c[]<ESC>hp')
+keymap.set('n', 'c[', 'ci[<ESC>2"_xP`[v`]')
+
+keymap.set('v', '\'', 'c\'\'<ESC>hp')
+keymap.set('n', 'c\'', 'ci\'<ESC>2"_xP`[v`]')
+
+keymap.set('v', '"', 'c""<ESC>hp')
+keymap.set('n', 'c"', 'ci"<ESC>2"_xP`[v`]')
+
+keymap.set('v', '<', 'c<><ESC>hp')
+keymap.set('n', 'c<', 'ci<<ESC>2"_xP`[v`]')
+
+keymap.set('v', '`', 'c``<ESC>hp')
+keymap.set('n', 'c`', 'ci`<ESC>2"_xP`[v`]')
