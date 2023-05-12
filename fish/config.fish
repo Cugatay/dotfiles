@@ -43,3 +43,8 @@ source /Users/cagataykaydir/.docker/init-fish.sh || true # Added by Docker Deskt
 # tabtab source for packages
 # uninstall by removing these lines
 [ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
+
+# pnpm
+set -gx PNPM_HOME "/Users/cagataykaydir/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end

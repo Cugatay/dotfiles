@@ -12,7 +12,6 @@ ts.setup {
     disable = function(lang, bufnr) -- Disable in large C++ buffers
       return vim.api.nvim_buf_line_count(bufnr) > 50000
     end,
-
     additional_vim_regex_highlighting = false,
   },
 

@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/auto-session",
     url = "https://github.com/rmagatti/auto-session"
   },
+  ["close-buffers.nvim"] = {
+    loaded = true,
+    path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/close-buffers.nvim",
+    url = "https://github.com/kazhala/close-buffers.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/cmp-buffer",
