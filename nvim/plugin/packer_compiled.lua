@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/fidget.nvim",
@@ -118,6 +123,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["leap.nvim"] = {
+    config = { "\27LJ\2\nj\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\1\0B\0\2\0029\0\3\0004\1\0\0=\1\4\0K\0\1\0\16safe_labels\topts\25add_default_mappings\tleap\frequire\0" },
+    loaded = true,
+    path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -227,6 +238,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: leap.nvim
+time([[Config for leap.nvim]], true)
+try_loadstring("\27LJ\2\nj\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\1\0B\0\2\0029\0\3\0004\1\0\0=\1\4\0K\0\1\0\16safe_labels\topts\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
+time([[Config for leap.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

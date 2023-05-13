@@ -11,16 +11,11 @@ keymap.set('n', ' k', '<cmd>wincmd k<CR>')
 keymap.set('n', ' j', '<cmd>wincmd j<CR>')
 
 -- Close buffer with C-w
--- vim.keymap.set('n', '<C-w>', '<cmd>BD this<CR>')
+vim.keymap.set('n', '<C-w>', '<cmd>BD this<CR>')
 
-vim.keymap.set('n', '<C-w>', function()
-  local windows = vim.api.nvim_list_wins()
-
-  if windows ~= 1 then
-    require('close_buffers').delete({ type = 'this' })
-    vim.cmd('q')
-  end
-end)
+-- vim.keymap.set('n', '<C-w>', function()
+--   require('close_buffers').delete({ type = 'this' })
+-- end)
 
 -- Line up and down
 keymap.set('n', '<C-j>', ':m .+1<CR>==')
