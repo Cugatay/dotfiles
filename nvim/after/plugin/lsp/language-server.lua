@@ -4,8 +4,8 @@ local lsp_attach = function(client, bufnr)
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<C-n>", function() vim.diagnostic.goto_next() end, opts)
-  -- vim.keymap.set("n", "gp", function() vim.diagnostic.goto_prev() end, opts)
+  vim.keymap.set("n", "<leader>n", function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set("n", "<leader>p", function() vim.diagnostic.goto_prev() end, opts)
   vim.keymap.set("n", "gr", function() vim.lsp.buf.rename() end, opts)
   -- To enter opened error
   -- map <space>e :lua vim.diagnostic.open_float(0, {scope="line"})<CR>

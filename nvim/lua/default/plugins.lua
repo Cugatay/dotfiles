@@ -18,7 +18,8 @@ packer.startup(function(use)
   use 'folke/tokyonight.nvim'                                   -- Theme
   -- use { "catppuccin/nvim", as = "catppuccin" }
   use 'nvim-lualine/lualine.nvim'                               -- Statusline
-  use 'akinsho/nvim-bufferline.lua'                             -- Bufferline
+  -- use 'akinsho/nvim-bufferline.lua'                          -- Bufferline
+  use 'cbochs/grapple.nvim'                                     -- File Workflow
   use 'kyazdani42/nvim-web-devicons'                            -- File icons
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- Highlights
   -- ----------------------------------------------------------
@@ -42,34 +43,10 @@ packer.startup(function(use)
   use 'numToStr/Comment.nvim'                       -- Toggle Comment out
   use 'JoosepAlviste/nvim-ts-context-commentstring' -- Comment out tsx
   use 'norcalli/nvim-colorizer.lua'                 -- Colorize rgb and hex codes
-  use 'rmagatti/auto-session'                       -- Save sessions automatically
+  -- use 'rmagatti/auto-session'                       -- Save sessions automatically
   use 'kazhala/close-buffers.nvim'                  -- Close buffers without closing split screens
-
-  use "sindrets/diffview.nvim"
-
-  use { 'ggandor/leap.nvim', config = function()
-    require('leap').add_default_mappings()
-    require('leap').opts.safe_labels = {}
-    -- require('leap').opts.case_sensitive = true
-  end }
-
-  -- use({
-  --   "folke/noice.nvim",
-  --   config = function()
-  --     require("noice").setup({
-  --       -- add any options here
-  --     })
-  --   end,
-  --   requires = {
-  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-  --     "MunifTanjim/nui.nvim",
-  --     -- OPTIONAL:
-  --     --   `nvim-notify` is only needed, if you want to use the notification view.
-  --     --   If not available, we use `mini` as the fallback
-  --     "rcarriga/nvim-notify",
-  --   }
-  -- })
-
+  use 'ggandor/leap.nvim'                           -- Nvim's mouse answer
+  use 'mbbill/undotree'                             -- Undotree
   -- ---------------------------------------------------------
 
   -- Search globally
@@ -79,8 +56,9 @@ packer.startup(function(use)
 
   -- Git plugins
   use 'lewis6991/gitsigns.nvim'
-  use 'tpope/vim-fugitive'  -- It's in VimScript :(
-  use "numToStr/FTerm.nvim" -- This is a floating term plugin, but I'm using it for opening LazyGit
+  use 'tpope/vim-fugitive'     -- It's in VimScript :(
+  use "sindrets/diffview.nvim" -- VSCode-like diffview
+  -- use "numToStr/FTerm.nvim" -- This is a floating term plugin, but I'm using it for opening LazyGit
   -- ---------------------------------------------------------
 
   -- Language Plugins

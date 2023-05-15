@@ -79,20 +79,10 @@ _G.packer_plugins = {
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
-  ["FTerm.nvim"] = {
-    loaded = true,
-    path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/FTerm.nvim",
-    url = "https://github.com/numToStr/FTerm.nvim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
-  },
-  ["auto-session"] = {
-    loaded = true,
-    path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/auto-session",
-    url = "https://github.com/rmagatti/auto-session"
   },
   ["close-buffers.nvim"] = {
     loaded = true,
@@ -124,8 +114,12 @@ _G.packer_plugins = {
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["grapple.nvim"] = {
+    loaded = true,
+    path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/grapple.nvim",
+    url = "https://github.com/cbochs/grapple.nvim"
+  },
   ["leap.nvim"] = {
-    config = { "\27LJ\2\nj\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\1\0B\0\2\0029\0\3\0004\1\0\0=\1\4\0K\0\1\0\16safe_labels\topts\25add_default_mappings\tleap\frequire\0" },
     loaded = true,
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
@@ -154,11 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
-  },
-  ["nvim-bufferline.lua"] = {
-    loaded = true,
-    path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua",
-    url = "https://github.com/akinsho/nvim-bufferline.lua"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -220,6 +209,11 @@ _G.packer_plugins = {
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  undotree = {
+    loaded = true,
+    path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
   ["vim-astro"] = {
     loaded = true,
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/vim-astro",
@@ -238,10 +232,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: leap.nvim
-time([[Config for leap.nvim]], true)
-try_loadstring("\27LJ\2\nj\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\1\0B\0\2\0029\0\3\0004\1\0\0=\1\4\0K\0\1\0\16safe_labels\topts\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
-time([[Config for leap.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

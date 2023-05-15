@@ -1,5 +1,7 @@
 local keymap = vim.keymap
 
+vim.g.mapleader = " "
+
 -- To delete words with alt + backspace
 keymap.set('i', '<A-BS>', '<C-w>')
 keymap.set('c', '<A-BS>', '<C-w>')
