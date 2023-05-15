@@ -63,6 +63,7 @@ vim.keymap.set('n', '<C-f>', function()
   -- builtin.grep_string()
 end)
 
+-- vim.keymap.set("n", "<leader>x", function()
 vim.keymap.set("n", "<C-b>", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
