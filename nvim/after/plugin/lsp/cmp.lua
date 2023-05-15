@@ -1,4 +1,5 @@
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 -- local cmp_select = { behavior = cmp.SelectBehavior.Select, select = true }
 local cmp_select = { select = true }
@@ -9,16 +10,10 @@ local mappings = {
   ['<CR>'] = cmp.mapping.confirm(cmp_select),
   ['<C-f>'] = cmp.mapping.confirm({ select = true }),
   ['ƒ'] = cmp.mapping.confirm({ select = true }),
-  ['<C-e>'] = cmp.mapping.scroll_docs( -4),
+  ['<C-e>'] = cmp.mapping.scroll_docs(-4),
   ['<C-d>'] = cmp.mapping.scroll_docs(4),
   ['<C-Space>'] = cmp.mapping.complete()
 }
-
--- local lspkind = require('lspkind').cmp_format({
---   mode = 'symbol',
---   maxwidth = 50,
---   ellipsis_char = '...',
--- })
 
 cmp.setup({
   snippet = {
@@ -38,7 +33,22 @@ cmp.setup({
     { name = 'buffer' }
   }
   ),
-  -- formatting = {
-  --   format = lspkind
-  -- }
+
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+
+      -- default symbol map
+      -- can be either 'default' (requires nerd-fonts font) or
+      -- 'codicons' for codicon preset (requires vscode-codicons font)
+      -- default: 'default'
+      preset = 'default',
+
+      -- The function below will be called before any actual modifications from lspkind
+      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      before = function(_, vim_item)
+        return vim_item
+      end
+    })
+  }
 })

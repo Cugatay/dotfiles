@@ -19,21 +19,30 @@ packer.startup(function(use)
   -- use { "catppuccin/nvim", as = "catppuccin" }
   use 'nvim-lualine/lualine.nvim'                               -- Statusline
   -- use 'akinsho/nvim-bufferline.lua'                          -- Bufferline
-  use 'cbochs/grapple.nvim'                                     -- File Workflow
   use 'kyazdani42/nvim-web-devicons'                            -- File icons
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- Highlights
   -- ----------------------------------------------------------
 
   -- Language Server
   use 'neovim/nvim-lspconfig'
-  use "williamboman/mason.nvim"         -- Language servers
+  use "williamboman/mason.nvim" -- Language servers
   use 'williamboman/mason-lspconfig.nvim'
-  use 'yioneko/nvim-cmp'                -- Fake version, real is: hrsh7th/nvim-cmp
+  -- use 'yioneko/nvim-cmp'                       -- Fake version, real is: hrsh7th/nvim-cmp
+  use 'hrsh7th/nvim-cmp'                -- Fake version, real is: hrsh7th/nvim-cmp
   use 'hrsh7th/cmp-nvim-lsp'            -- nvim-cmp source for neovim's built-in LSP
+  use 'onsails/lspkind.nvim'            -- VSCode-like Pictograms
   use "L3MON4D3/LuaSnip"                -- Snippet engine requirement
   use 'jose-elias-alvarez/null-ls.nvim' -- Formatter
-  use 'hrsh7th/cmp-buffer'              -- Buffer course for intellisense
+  use 'hrsh7th/cmp-buffer'              -- Buffer source for intellisense
   use 'j-hui/fidget.nvim'               -- LSP Updates UI
+
+  use {
+    "jinzhongjia/LspUI.nvim",
+    -- event = 'VimEnter',
+    config = function()
+      require("LspUI").setup()
+    end
+  }
   -- ----------------------------------------------------------
 
   -- Must be coding features
@@ -47,6 +56,7 @@ packer.startup(function(use)
   use 'kazhala/close-buffers.nvim'                  -- Close buffers without closing split screens
   use 'ggandor/leap.nvim'                           -- Nvim's mouse answer
   use 'mbbill/undotree'                             -- Undotree
+  use 'cbochs/grapple.nvim'                         -- File Workflow
   -- ---------------------------------------------------------
 
   -- Search globally
@@ -62,7 +72,7 @@ packer.startup(function(use)
   -- ---------------------------------------------------------
 
   -- Language Plugins
-  use 'wuelnerdotexe/vim-astro'
+  -- use 'wuelnerdotexe/vim-astro'
   -- use 'simrat39/rust-tools.nvim'
   -- ---------------------------------------------------------
 end)

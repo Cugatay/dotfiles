@@ -9,24 +9,25 @@ vim.keymap.set('n', '<leader>s', function()
 end)
 
 vim.keymap.set('n', '<leader>j', function()
-  -- grp.select({ key = '1' })
-  vim.cmd("GrappleSelect key=1")
+  grapple.select({ key = 1 })
 end)
 
 vim.keymap.set('n', '<leader>k', function()
-  -- grp.select({ key = '2' })
-  vim.cmd("GrappleSelect key=2")
+  grapple.select({ key = 2 })
 end)
 
 vim.keymap.set('n', '<leader>l', function()
-  -- grp.select({ key = '3' })
-  vim.cmd("GrappleSelect key=3")
+  grapple.select({ key = 3 })
 end)
 
 vim.keymap.set('n', '<leader>;', function()
-  -- grp.select({ key = '4' })
-  vim.cmd("GrappleSelect key=4")
+  grapple.select({ key = 4 })
 end)
+
+vim.keymap.set('n', '<leader>h', function()
+  grapple.select({ key = 5 })
+end)
+-----------------------------------------------
 
 -- local group_enter = vim.api.nvim_create_augroup("SessionLoad", { clear = true })
 
