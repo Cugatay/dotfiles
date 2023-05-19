@@ -16,19 +16,18 @@ packer.startup(function(use)
 
   -- Editor Style
   use 'folke/tokyonight.nvim'                                   -- Theme
-  -- use { "catppuccin/nvim", as = "catppuccin" }
   use 'nvim-lualine/lualine.nvim'                               -- Statusline
-  -- use 'akinsho/nvim-bufferline.lua'                          -- Bufferline
   use 'kyazdani42/nvim-web-devicons'                            -- File icons
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- Highlights
+  -- use { "catppuccin/nvim", as = "catppuccin" }
+  -- use 'akinsho/nvim-bufferline.lua'                          -- Bufferline
   -- ----------------------------------------------------------
 
   -- Language Server
   use 'neovim/nvim-lspconfig'
-  use "williamboman/mason.nvim" -- Language servers
+  use "williamboman/mason.nvim"         -- Language servers
   use 'williamboman/mason-lspconfig.nvim'
-  -- use 'yioneko/nvim-cmp'                       -- Fake version, real is: hrsh7th/nvim-cmp
-  use 'hrsh7th/nvim-cmp'                -- Fake version, real is: hrsh7th/nvim-cmp
+  use 'yioneko/nvim-cmp'                -- Fake version, real is: hrsh7th/nvim-cmp
   use 'hrsh7th/cmp-nvim-lsp'            -- nvim-cmp source for neovim's built-in LSP
   use 'onsails/lspkind.nvim'            -- VSCode-like Pictograms
   use "L3MON4D3/LuaSnip"                -- Snippet engine requirement
@@ -62,6 +61,7 @@ packer.startup(function(use)
   -- Search globally
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
+  use 'stevearc/oil.nvim'
   -- ---------------------------------------------------------
 
   -- Git plugins
@@ -74,5 +74,27 @@ packer.startup(function(use)
   -- Language Plugins
   -- use 'wuelnerdotexe/vim-astro'
   -- use 'simrat39/rust-tools.nvim'
+  -- TODO: Look at this, delete or use
+  use {
+    "nvim-neorg/neorg",
+    config = function()
+      require('neorg').setup {
+        load = {
+          ["core.defaults"] = {},  -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.dirman"] = {      -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                notes = "~/notes",
+              },
+            },
+          },
+        },
+      }
+    end,
+    run = ":Neorg sync-parsers",
+    requires = "nvim-lua/plenary.nvim",
+  }
+
   -- ---------------------------------------------------------
 end)

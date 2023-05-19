@@ -7,15 +7,18 @@ keymap.set('i', '<A-BS>', '<C-w>')
 keymap.set('c', '<A-BS>', '<C-w>')
 
 -- Window transitions
-keymap.set('n', ' h', '<cmd>wincmd h<CR>')
-keymap.set('n', ' l', '<cmd>wincmd l<CR>')
-keymap.set('n', ' k', '<cmd>wincmd k<CR>')
-keymap.set('n', ' j', '<cmd>wincmd j<CR>')
+keymap.set('n', '<C-h>', '<cmd>wincmd h<CR>')
+keymap.set('n', '<C-l>', '<cmd>wincmd l<CR>')
+keymap.set('n', '<C-k>', '<cmd>wincmd k<CR>')
+keymap.set('n', '<C-j>', '<cmd>wincmd j<CR>')
 
 -- Close buffer with C-w
-vim.keymap.set('n', '<C-w>', '<cmd>BD this<CR>')
+keymap.set('n', '<C-w>', '<cmd>BD this<CR>')
 
--- vim.keymap.set('n', '<C-w>', function()
+-- Go to last buffer with <leader>w
+keymap.set('n', '<leader>w', '<C-^>')
+
+-- keymap.set('n', '<C-w>', function()
 --   require('close_buffers').delete({ type = 'this' })
 -- end)
 
@@ -34,7 +37,7 @@ keymap.set('n', 'x', '"_x')
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
-keymap.set('n', '=', '<C-a>')
+-- keymap.set('n', '=', '<C-a>')
 keymap.set('n', '-', '<C-x>')
 
 -- Copy to clipboard
@@ -64,4 +67,4 @@ keymap.set('n', 'c`', 'ci`<ESC>2"_xP`[v`]')
 keymap.set('n', '\'\'', '``')
 
 -- Split screen vertically
-keymap.set('n', ' s', ':vert sp<CR>:wincmd l <CR>')
+-- keymap.set('n', ' s', ':vert sp<CR>:wincmd l <CR>')

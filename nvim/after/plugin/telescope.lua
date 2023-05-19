@@ -37,7 +37,8 @@ telescope.setup {
           ["n"] = fb_actions.create,
           ["r"] = fb_actions.rename,
           ["m"] = fb_actions.rename,
-          -- ["h"] = fb_actions.goto_parent_dir,
+          ["e"] = function()
+          end
           -- ["/"] = function()
           --   vim.cmd('startinsert')
           -- end
@@ -60,20 +61,23 @@ end)
 
 vim.keymap.set('n', '<C-f>', function()
   builtin.live_grep()
-  -- builtin.grep_string()
 end)
 
--- vim.keymap.set("n", "<leader>x", function()
-vim.keymap.set("n", "<C-b>", function()
-  telescope.extensions.file_browser.file_browser({
-    path = "%:p:h",
-    cwd = telescope_buffer_dir(),
-    respect_gitignore = false,
-    hidden = true,
-    grouped = true,
-    previewer = false,
-    initial_mode = "normal",
-    layout_config = { height = 40 },
-    git_status = false
-  })
-end)
+-- Open buffer list
+-- vim.keymap.set('n', '<leader>b', function()
+--   builtin.buffers()
+-- end)
+
+-- vim.keymap.set("n", "<C-b>", function()
+--   telescope.extensions.file_browser.file_browser({
+--     path = "%:p:h",
+--     cwd = telescope_buffer_dir(),
+--     respect_gitignore = false,
+--     hidden = true,
+--     grouped = true,
+--     previewer = false,
+--     initial_mode = "normal",
+--     layout_config = { height = 40 },
+--     git_status = false
+--   })
+-- end)
