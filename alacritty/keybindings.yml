@@ -11,10 +11,10 @@ key_bindings:
   - { key: D, mods: Command, chars: "\x01\x25" } # Split window vertically
   - { key: D, mods: Command|Shift, chars: "\x01\x22" } #  Split window horizontally
 
-  # - { key: H, mods: Command, chars: "\x01\x68" } # Switch to left panel
-  # - { key: L, mods: Command, chars: "\x01\x6c" } # Switch to left panel
-  # - { key: J, mods: Command, chars: "\x01\x6a" } # Switch to left panel
-  # - { key: K, mods: Command, chars: "\x01\x6b" } # Switch to left panel
+  - { key: H, mods: Command, chars: "\x01\x68" } # Switch to left panel
+  - { key: L, mods: Command, chars: "\x01\x6c" } # Switch to left panel
+  - { key: J, mods: Command, chars: "\x01\x6a" } # Switch to left panel
+  - { key: K, mods: Command, chars: "\x01\x6b" } # Switch to left panel
 
   - { key: T, mods: Command, chars: "\x01\x63" } # Create new tab
 
@@ -35,6 +35,11 @@ key_bindings:
 
   - { key: W, mods: Command, chars: "\x01\x78" } # Close current panel / window
 
+  - { key: Semicolon, mods: Command, mode: ~Vi|~Search, chars: "\x0c" }
+  - { key: Semicolon, mods: Command, mode: ~Vi|~Search, chars: "\x0c" }
+
+  - { key: LBracket, mods: Command, mode: ~Vi|~Search, chars: "\x0c" }
+  - { key: LBracket, mods: Command, mode: ~Vi|~Search, action: ClearHistory }
 
     # New tab Cmd + t
     # Window transitions hjkl, if define k, then you'll need to find a new way to clear terminal without Cmd + k keybinding
