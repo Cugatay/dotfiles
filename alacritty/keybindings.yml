@@ -36,11 +36,12 @@ key_bindings:
   - { key: W, mods: Command, chars: "\x01\x78" } # Close current panel / window
 
   - { key: Semicolon, mods: Command, mode: ~Vi|~Search, chars: "\x0c" }
-  - { key: Semicolon, mods: Command, mode: ~Vi|~Search, chars: "\x0c" }
+  - { key: Semicolon, mods: Command, mode: ~Vi|~Search, action: ClearHistory }
+  # - { key: LBracket, mods: Command, mode: ~Vi|~Search, chars: "\x0c" }
+  # - { key: LBracket, mods: Command, mode: ~Vi|~Search, action: ClearHistory }
+  # - { key: P, mods: Command, mode: ~Vi|~Search, chars: "\x0c" }
+  # - { key: P, mods: Command, mode: ~Vi|~Search, action: ClearHistory }
 
-  - { key: LBracket, mods: Command, mode: ~Vi|~Search, chars: "\x0c" }
-  - { key: LBracket, mods: Command, mode: ~Vi|~Search, action: ClearHistory }
-
-    # New tab Cmd + t
-    # Window transitions hjkl, if define k, then you'll need to find a new way to clear terminal without Cmd + k keybinding
-    # Switch tabs with Control + tab
+  # New tab Cmd + t
+  # Window transitions hjkl, if define k, then you'll need to find a new way to clear terminal without Cmd + k keybinding
+  # Switch tabs with Control + tab
