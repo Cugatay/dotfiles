@@ -21,6 +21,7 @@ packer.startup(function(use)
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- Highlights
   -- use { "catppuccin/nvim", as = "catppuccin" }
   -- use 'akinsho/nvim-bufferline.lua'                          -- Bufferline
+
   -- ----------------------------------------------------------
 
   -- Language Server
@@ -58,6 +59,7 @@ packer.startup(function(use)
   use 'ggandor/leap.nvim'                           -- Nvim's mouse answer
   -- use 'mbbill/undotree'                             -- Undotree
   use 'cbochs/grapple.nvim'                         -- File Workflow
+  use 'romgrk/barbar.nvim'
   -- use { 'mg979/vim-visual-multi', branch = 'master' } -- Multi cursor
   -- ---------------------------------------------------------
 
