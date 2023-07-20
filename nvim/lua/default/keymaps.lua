@@ -23,8 +23,8 @@ keymap.set('n', '<leader>w', '<C-^>')
 -- end)
 
 -- Line up and down
-keymap.set('n', '<C-j>', ':m .+1<CR>==')
-keymap.set('n', '<C-k>', ':m .-2<CR>==')
+-- keymap.set('n', '<C-j>', ':m .+1<CR>==')
+-- keymap.set('n', '<C-k>', ':m .-2<CR>==')
 keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv")
 keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv")
 
@@ -41,30 +41,34 @@ keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
 
 -- Copy to clipboard
-keymap.set('v', " y", '"+y')
+keymap.set('v', "<leader>y", '"+y')
+keymap.set('v', "<leader>p", '"_dP')
 
 -- Sorround natively --------------------------------
-keymap.set('v', '(', 'c()<ESC>hp')
-keymap.set('n', 'c(', 'ci(<ESC>2"_xP`[v`]')
-
-keymap.set('v', '{', 'c{}<ESC>hp')
-keymap.set('n', 'c{', 'ci{<ESC>2"_xP`[v`]')
-
-keymap.set('v', '[', 'c[]<ESC>hp')
-keymap.set('n', 'c[', 'ci[<ESC>2"_xP`[v`]')
-
-keymap.set('v', '\'', 'c\'\'<ESC>hp')
-keymap.set('n', 'c\'', 'ci\'<ESC>2"_xP`[v`]')
-
-keymap.set('v', '"', 'c""<ESC>hp')
-keymap.set('n', 'c"', 'ci"<ESC>2"_xP`[v`]')
-
-keymap.set('v', '`', 'c``<ESC>hp')
-keymap.set('n', 'c`', 'ci`<ESC>2"_xP`[v`]')
+-- keymap.set('v', '(', 'c()<ESC>hp')
+-- keymap.set('n', 'c(', 'ci(<ESC>2"_xP`[v`]')
+--
+-- keymap.set('v', '{', 'c{}<ESC>hp')
+-- keymap.set('n', 'c{', 'ci{<ESC>2"_xP`[v`]')
+--
+-- keymap.set('v', '[', 'c[]<ESC>hp')
+-- keymap.set('n', 'c[', 'ci[<ESC>2"_xP`[v`]')
+--
+-- keymap.set('v', '\'', 'c\'\'<ESC>hp')
+-- keymap.set('n', 'c\'', 'ci\'<ESC>2"_xP`[v`]')
+--
+-- keymap.set('v', '"', 'c""<ESC>hp')
+-- keymap.set('n', 'c"', 'ci"<ESC>2"_xP`[v`]')
+--
+-- keymap.set('v', '`', 'c``<ESC>hp')
+-- keymap.set('n', 'c`', 'ci`<ESC>2"_xP`[v`]')
 -- --------------------------------------------------
 
 -- Go to mark like ` when pressing '
 keymap.set('n', '\'\'', '``')
+
+-- Remove esc (to get used to use C-c instead)
+keymap.set('i', '<esc>', '')
 
 -- Split screen vertically
 -- keymap.set('n', ' s', ':vert sp<CR>:wincmd l <CR>')
