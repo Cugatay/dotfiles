@@ -4,11 +4,11 @@ local telescope = require('telescope')
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
 
+local fb_actions = require "telescope".extensions.file_browser.actions
+
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
-
-local fb_actions = require "telescope".extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
@@ -29,16 +29,15 @@ telescope.setup {
       hijack_netrw = true,
       mappings = {
         -- your custom insert mode mappings
-        ["i"] = {
-          -- ["<C-w>"] = function() vim.cmd('normal vbd') end,
-        },
+        -- ["i"] = {
+        --   ["<C-c>"] = '<ESC>',
+        -- },
         ["n"] = {
           -- your custom normal mode mappings
           ["n"] = fb_actions.create,
           ["r"] = fb_actions.rename,
           ["m"] = fb_actions.rename,
-          ["e"] = function()
-          end
+          -- ["h"] = fb_actions.goto_parent_dir,
           -- ["/"] = function()
           --   vim.cmd('startinsert')
           -- end
@@ -59,25 +58,24 @@ vim.keymap.set('n', '<C-p>', function()
   })
 end)
 
+vim.keymap.set('n', '<C-b>', function()
+  builtin.buffers({})
+end)
+
 vim.keymap.set('n', '<C-f>', function()
   builtin.live_grep()
 end)
 
--- Open buffer list
--- vim.keymap.set('n', '<leader>b', function()
---   builtin.buffers()
--- end)
-
--- vim.keymap.set("n", "<C-b>", function()
---   telescope.extensions.file_browser.file_browser({
---     path = "%:p:h",
---     cwd = telescope_buffer_dir(),
---     respect_gitignore = false,
---     hidden = true,
---     grouped = true,
---     previewer = false,
---     initial_mode = "normal",
---     layout_config = { height = 40 },
---     git_status = false
---   })
--- end)
+vim.keymap.set("n", "<leader>b", function()
+  telescope.extensions.file_browser.file_browser({
+    path = "%:p:h",
+    cwd = telescope_buffer_dir(),
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = false,
+    initial_mode = "normal",
+    layout_config = { height = 40 },
+    git_status = false
+  })
+end)

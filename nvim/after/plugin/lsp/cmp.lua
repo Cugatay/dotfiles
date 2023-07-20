@@ -1,6 +1,8 @@
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 
+require('luasnip.loaders.from_vscode').lazy_load()
+
 -- local cmp_select = { behavior = cmp.SelectBehavior.Select, select = true }
 local cmp_select = { select = true }
 
@@ -29,7 +31,7 @@ cmp.setup({
       -- group_index = 1,
       -- max_item_count = 15
     },
-    -- { name = 'luasnip' }, -- For luasnip users.
+    { name = 'luasnip' }, -- For luasnip users.
     { name = 'buffer' }
   }
   ),
