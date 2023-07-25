@@ -2,7 +2,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 
 -- vim.opt.shell = 'fish'
-
+-- vim.guicursor = ""
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
@@ -27,7 +27,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.pumheight = 15
 
 -- vim.opt.syntax = "off"
-vim.cmd([[syntax off]])
+-- vim.cmd([[syntax off]])
 
 -- vim.cmd([[
 -- set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50

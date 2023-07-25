@@ -25,8 +25,10 @@ keymap.set('n', '<leader>w', '<C-^>')
 -- Line up and down
 -- keymap.set('n', '<C-j>', ':m .+1<CR>==')
 -- keymap.set('n', '<C-k>', ':m .-2<CR>==')
-keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv")
-keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv")
+-- keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv")
+-- keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv")
+keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- Don't copy to clipboard when using x
 keymap.set('n', 'x', '"_x')
@@ -45,30 +47,40 @@ keymap.set('v', "<leader>y", '"+y')
 keymap.set('v', "<leader>p", '"_dP')
 
 -- Sorround natively --------------------------------
--- keymap.set('v', '(', 'c()<ESC>hp')
--- keymap.set('n', 'c(', 'ci(<ESC>2"_xP`[v`]')
---
--- keymap.set('v', '{', 'c{}<ESC>hp')
--- keymap.set('n', 'c{', 'ci{<ESC>2"_xP`[v`]')
---
--- keymap.set('v', '[', 'c[]<ESC>hp')
--- keymap.set('n', 'c[', 'ci[<ESC>2"_xP`[v`]')
---
--- keymap.set('v', '\'', 'c\'\'<ESC>hp')
--- keymap.set('n', 'c\'', 'ci\'<ESC>2"_xP`[v`]')
---
--- keymap.set('v', '"', 'c""<ESC>hp')
--- keymap.set('n', 'c"', 'ci"<ESC>2"_xP`[v`]')
---
--- keymap.set('v', '`', 'c``<ESC>hp')
--- keymap.set('n', 'c`', 'ci`<ESC>2"_xP`[v`]')
+keymap.set('v', '(', 'c()<ESC>hp')
+keymap.set('n', 'c(', 'ci(<ESC>2"_xP`[v`]')
+
+keymap.set('v', '{', 'c{}<ESC>hp')
+keymap.set('n', 'c{', 'ci{<ESC>2"_xP`[v`]')
+
+keymap.set('v', '[', 'c[]<ESC>hp')
+keymap.set('n', 'c[', 'ci[<ESC>2"_xP`[v`]')
+
+keymap.set('v', '\'', 'c\'\'<ESC>hp')
+keymap.set('n', 'c\'', 'ci\'<ESC>2"_xP`[v`]')
+
+keymap.set('v', '"', 'c""<ESC>hp')
+keymap.set('n', 'c"', 'ci"<ESC>2"_xP`[v`]')
+
+keymap.set('v', '`', 'c``<ESC>hp')
+keymap.set('n', 'c`', 'ci`<ESC>2"_xP`[v`]')
 -- --------------------------------------------------
 
 -- Go to mark like ` when pressing '
 keymap.set('n', '\'\'', '``')
 
+-- TODO: bunu kullanan yerleri araştır
+-- vim.api.nvim_set_keymap
+
+-- keymap.set('n', '<leader><CR>', ':luafile $MYVIMRC<CR>', { noremap = true, silent = true })
+
 -- Remove esc (to get used to use C-c instead)
-keymap.set('i', '<esc>', '')
+-- keymap.set('i', '<esc>', '')
 
 -- Split screen vertically
 -- keymap.set('n', ' s', ':vert sp<CR>:wincmd l <CR>')
+
+-- keymap.set('n', '<leader><CR>', ':so ~/.config/nvim/lua/default/init.lua<CR>')
+
+-- Remap <space> to <nop>
+keymap.set('n', '<space>', '<nop>')

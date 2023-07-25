@@ -58,20 +58,45 @@ packer.startup(function(use)
   use 'ggandor/leap.nvim'                           -- Nvim's mouse answer
   -- use 'mbbill/undotree'                             -- Undotree
   use 'cbochs/grapple.nvim'                         -- File Workflow
+  use 'github/copilot.vim'
+
+  use({
+    "jackMort/ChatGPT.nvim",
+    requires = {
+      "MunifTanjim/nui.nvim",
+      -- "nvim-lua/plenary.nvim",
+      -- "nvim-telescope/telescope.nvim"
+    }
+  })
+  -- use { 'RishabhRD/nvim-cheat.sh', requires = { 'RishabhRD/popfix' } }
+
+
   -- use { 'mg979/vim-visual-multi', branch = 'master' } -- Multi cursor
   -- ---------------------------------------------------------
 
   -- Search globally
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
+  -- use {
+  --   'prochri/telescope-all-recent.nvim',
+  --   config = function()
+  --     require 'telescope-all-recent'.setup {
+  --       -- your config goes here
+  --     }
+  --   end,
+  --   requires = { 'kkharji/sqlite.lua' }
+  -- }
 
   -- use 'stevearc/oil.nvim'
   -- ---------------------------------------------------------
 
   -- Git plugins
   use 'lewis6991/gitsigns.nvim'
-  use 'tpope/vim-fugitive'     -- It's in VimScript :(
-  use "sindrets/diffview.nvim" -- VSCode-like diffview
+  use 'tpope/vim-fugitive'
+  -- use "sindrets/diffview.nvim" -- VSCode-like diffview
+  -- use { 'NeogitOrg/neogit', config = function()
+  --   require('neogit').setup {}
+  -- end }
   -- use 'f-person/git-blame.nvim'
   -- use "numToStr/FTerm.nvim" -- This is a floating term plugin, but I'm using it for opening LazyGit
   -- ---------------------------------------------------------

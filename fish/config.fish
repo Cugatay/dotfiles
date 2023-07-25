@@ -2,7 +2,6 @@ if status is-interactive
 	# For Vim
   alias vim="nvim"
 	alias vimc="cd ~/.config/nvim && vim"
-
 	# For LazyGit
 	alias lg="lazygit"
 
@@ -47,4 +46,3 @@ source /Users/cagataykaydir/.docker/init-fish.sh || true # Added by Docker Deskt
 # pnpm
 set -gx PNPM_HOME "/Users/cagataykaydir/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
-# pnpm end

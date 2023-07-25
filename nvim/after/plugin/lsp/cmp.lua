@@ -9,7 +9,7 @@ local cmp_select = { select = true }
 local mappings = {
   ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<CR>'] = cmp.mapping.confirm(cmp_select),
+  -- ['<CR>'] = cmp.mapping.confirm(cmp_select),
   ['<C-f>'] = cmp.mapping.confirm({ select = true }),
   ['ƒ'] = cmp.mapping.confirm({ select = true }),
   ['<C-e>'] = cmp.mapping.scroll_docs(-4),

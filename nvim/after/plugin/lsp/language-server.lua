@@ -29,6 +29,18 @@ require('mason-lspconfig').setup_handlers({
   end,
 })
 
+lspconfig.rust_analyzer.setup {
+  on_attach = lsp_attach,
+  capabilities = lsp_capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
+}
+
 lspconfig.denols.setup {
   root_dir = lspconfig.util.root_pattern("deno.json"),
   single_file_support = false,

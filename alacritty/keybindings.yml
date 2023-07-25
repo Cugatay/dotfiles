@@ -36,7 +36,7 @@ key_bindings:
   - { key: W, mods: Command, chars: "\x01\x78" } # Close current panel / window
 
   # - { key: Slash, mods: Control, chars: "\\c" }
-  - { key: Period, mods: Control, chars: "\\c" }
+  # - { key: Period, mods: Control, chars: "\\c" }
 
   - { key: Semicolon, mods: Command, mode: ~Vi|~Search, chars: "\x0c" }
   - { key: Semicolon, mods: Command, mode: ~Vi|~Search, action: ClearHistory }

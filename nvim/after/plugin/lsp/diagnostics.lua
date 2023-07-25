@@ -19,5 +19,4 @@ vim.diagnostic.config({
     header = "",
     prefix = "",
   },
-
 })
