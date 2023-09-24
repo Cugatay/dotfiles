@@ -6,8 +6,7 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
--- TODO: Add:
--- mg979/vim-visual-multi
+-- TODO: add a keymap for :0GlLog or :0Gllog -------------------- IMPORTANT by the way haha
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
@@ -19,7 +18,7 @@ packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'                               -- Statusline
   use 'kyazdani42/nvim-web-devicons'                            -- File icons
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- Highlights
-  -- use { "catppuccin/nvim", as = "catppuccin" }
+  use { "catppuccin/nvim", as = "catppuccin" }
   -- use 'akinsho/nvim-bufferline.lua'                          -- Bufferline
   -- ----------------------------------------------------------
 
@@ -55,9 +54,10 @@ packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'                 -- Colorize rgb and hex codes
   -- use 'rmagatti/auto-session'                       -- Save sessions automatically
   use 'kazhala/close-buffers.nvim'                  -- Close buffers without closing split screens
-  use 'ggandor/leap.nvim'                           -- Nvim's mouse answer
+  -- use 'ggandor/leap.nvim'                           -- Nvim's mouse answer
+  -- use 'folke/flash.nvim'
   -- use 'mbbill/undotree'                             -- Undotree
-  use 'cbochs/grapple.nvim'                         -- File Workflow
+  use 'cbochs/grapple.nvim' -- File Workflow
   use 'github/copilot.vim'
 
   use({
@@ -104,5 +104,15 @@ packer.startup(function(use)
   -- Language Plugins
   -- use 'wuelnerdotexe/vim-astro'
   -- use 'simrat39/rust-tools.nvim'
+
+  -- use 'echasnovski/mini.nvim'
+  -- use { 'echasnovski/mini.nvim', config = function()
+  --   require('mini.animate').setup()
+  -- end }
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
   -- ---------------------------------------------------------
 end)

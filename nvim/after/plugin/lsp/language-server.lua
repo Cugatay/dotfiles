@@ -6,16 +6,27 @@ local lsp_attach = function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
   -- ih.on_attach(client, bufnr)
 
-  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts) -- Fo colemak
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>n", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "<leader>p", function() vim.diagnostic.goto_prev() end, opts)
+  vim.keymap.set("n", "<leader>r", function() vim.diagnostic.goto_prev() end, opts) -- Note: I turned Ctrl-e to Ctrl-p with Karabiner to use that keymap as previous, so to run this one I'm using Ctrl-p
+
+  -----------------------------------
+  vim.keymap.set("n", "<leader>f", function()
+    vim.diagnostic.open_float()
+    vim.diagnostic.open_float()
+  end, opts)
+  vim.keymap.set("n", "<leader>ar", function() vim.lsp.buf.references() end, opts)
+  -----------------------------------
+
+  -- vim.keymap.set("n", "<leader>ww", function() vim.lsp.buf.workspace_symbol() end, opts)
+  -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
+  -- NOTE: I'm using rename and code actions in lspui
   -- vim.keymap.set("n", "gr", function() vim.lsp.buf.rename() end, opts)
 
   -- To enter opened error
   -- map <space>e :lua vim.diagnostic.open_float(0, {scope="line"})<CR>
-
-  -- NOTE: I'm using rename and code actions in lspui
 end
 
 local lspconfig = require('lspconfig')
@@ -41,20 +52,6 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
-lspconfig.denols.setup {
-  root_dir = lspconfig.util.root_pattern("deno.json"),
-  single_file_support = false,
-  on_attach = lsp_attach,
-  capabilities = lsp_capabilities,
-}
-
-lspconfig.tsserver.setup {
-  root_dir = lspconfig.util.root_pattern("package.json"),
-  single_file_support = false,
-  on_attach = lsp_attach,
-  capabilities = lsp_capabilities,
-}
-
 lspconfig.lua_ls.setup {
   settings = {
     Lua = {
@@ -68,6 +65,53 @@ lspconfig.lua_ls.setup {
   capabilities = lsp_capabilities,
 }
 
+lspconfig.tsserver.setup {
+  root_dir = lspconfig.util.root_pattern("package.json"),
+  single_file_support = false,
+  on_attach = lsp_attach,
+  capabilities = lsp_capabilities,
+}
+
+lspconfig.gdscript.setup {
+  -- on_attach = lsp_attach,
+  -- flags = {
+  --   debounce_text_changes = 150,
+  -- }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- lspconfig.denols.setup {
+--   root_dir = lspconfig.util.root_pattern("deno.json"),
+--   single_file_support = false,
+--   on_attach = lsp_attach,
+--   capabilities = lsp_capabilities,
+-- }
+
+-- lspconfig.tailwindcss.setup({
+--   settings = {
+--     tailwindCSS = {
+--       experimental = {
+--         classRegex = {
+--           ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+--           ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+--         },
+--       },
+--     },
+--   },
+-- })
 
 -- lspconfig.tailwindcss.setup({
 --   root_dir = lspconfig.util.root_pattern("tailwind.config.*"),

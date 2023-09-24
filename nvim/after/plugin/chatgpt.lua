@@ -5,7 +5,6 @@ vim.keymap.set('v', '<leader>cf', '<ESC>:ChatGPTRun fix_bugs<CR>')
 vim.keymap.set('v', '<leader>cx', ':ChatGPTRun explain_code<CR>')
 
 -- vim.keymap.set('n', '<leader>e', function()
-
 require("chatgpt").setup({
   chat = {
     keymaps = {

@@ -18,6 +18,12 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.tsx", "*.ts", "*.jsx", "*.js", "*.astro" },
   group = format_group,
-  command = "EslintFixAll",
+  -- callback = function()
+  --   if vim.fn.exists(':EslintFixAll') == 2 then
+  --     -- Run EslintFixAll command
+  --     vim.cmd('EslintFixAll')
+  --   end
+  -- end
+  command = "silent! EslintFixAll",
   -- command = 'if exists("EslintFixAll") | exe "EslintFixAll<CR>"  | endif'
 })

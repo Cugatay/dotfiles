@@ -8,6 +8,9 @@ if status is-interactive
   # For better ls
   alias ls="exa --icons --group-directories-first"
 
+  # bind \co "exec bash -c 'source ~/.config/fish/tmux-sessionizer.sh; exec fish'"
+  bind \co "source ~/.config/fish/tmux-sessionizer.fish; commandline -f execute"
+
 	# set -gx EDITOR nvim
 
 	# System Bin
@@ -46,3 +49,7 @@ source /Users/cagataykaydir/.docker/init-fish.sh || true # Added by Docker Deskt
 # pnpm
 set -gx PNPM_HOME "/Users/cagataykaydir/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+fish_add_path $BUN_INSTALL/bin

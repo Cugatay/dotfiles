@@ -8,9 +8,9 @@ keymap.set('c', '<A-BS>', '<C-w>')
 
 -- Window transitions
 keymap.set('n', '<C-h>', '<cmd>wincmd h<CR>')
-keymap.set('n', '<C-l>', '<cmd>wincmd l<CR>')
-keymap.set('n', '<C-k>', '<cmd>wincmd k<CR>')
 keymap.set('n', '<C-j>', '<cmd>wincmd j<CR>')
+keymap.set('n', '<C-k>', '<cmd>wincmd k<CR>')
+keymap.set('n', '<C-l>', '<cmd>wincmd l<CR>')
 
 -- Close buffer with C-w
 keymap.set('n', '<C-w>', '<cmd>BD this<CR>')
@@ -67,20 +67,7 @@ keymap.set('n', 'c`', 'ci`<ESC>2"_xP`[v`]')
 -- --------------------------------------------------
 
 -- Go to mark like ` when pressing '
-keymap.set('n', '\'\'', '``')
+keymap.set('n', '\'', '`')
 
--- TODO: bunu kullanan yerleri araştır
--- vim.api.nvim_set_keymap
-
--- keymap.set('n', '<leader><CR>', ':luafile $MYVIMRC<CR>', { noremap = true, silent = true })
-
--- Remove esc (to get used to use C-c instead)
--- keymap.set('i', '<esc>', '')
-
--- Split screen vertically
--- keymap.set('n', ' s', ':vert sp<CR>:wincmd l <CR>')
-
--- keymap.set('n', '<leader><CR>', ':so ~/.config/nvim/lua/default/init.lua<CR>')
-
--- Remap <space> to <nop>
 keymap.set('n', '<space>', '<nop>')
+keymap.set('i', '<C-c>', '<Esc>')

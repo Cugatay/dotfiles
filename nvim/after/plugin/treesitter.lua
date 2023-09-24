@@ -9,8 +9,14 @@ ts.setup {
 
   highlight = {
     enable = true,
-    disable = function(lang, bufnr) -- Disable in large buffers
-      return vim.api.nvim_buf_line_count(bufnr) > 50000
+    disable = function(lang, bufnr) -- Disable highlight in big files
+      if vim.fn.empty(vim.fn.glob(vim.fn.expand('%:p'))) == 1 then
+        return true
+      end
+      if vim.fn.getfsize(vim.fn.expand('%:p')) > 100000 then
+        return true
+      end
+      return false
     end,
     additional_vim_regex_highlighting = false,
   },

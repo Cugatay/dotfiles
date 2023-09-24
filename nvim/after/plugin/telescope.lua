@@ -14,7 +14,7 @@ telescope.setup {
   defaults = {
     mappings = {
       n = {
-        ["q"] = actions.close
+        ["q"] = actions.close,
       },
       i = {
         ["<C-j>"] = actions.move_selection_next,
@@ -37,6 +37,8 @@ telescope.setup {
           ["n"] = fb_actions.create,
           ["r"] = fb_actions.rename,
           ["m"] = fb_actions.rename,
+          -- ["e"] = function()
+          -- end,
           -- ["h"] = fb_actions.goto_parent_dir,
           -- ["/"] = function()
           --   vim.cmd('startinsert')
@@ -49,11 +51,16 @@ telescope.setup {
 
 telescope.load_extension("file_browser")
 
-vim.keymap.set('n', '<C-p>', function()
+vim.keymap.set('n', '<C-o>', function()
+  --   -- TODO
+  --   no_ignore = false,
+  --   -- file_ignore_patterns = { "!**/.env" },
+  --   hidden = true
+  -- })
+
   builtin.find_files({
-    -- TODO
+    -- find_command = { 'fd' --[[ , vim.fn.expand("<cword>") ]] },
     no_ignore = false,
-    -- file_ignore_patterns = { "!**/.env" },
     hidden = true
   })
 end)
