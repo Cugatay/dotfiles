@@ -23,20 +23,33 @@ packer.startup(function(use)
   -- ----------------------------------------------------------
 
   -- Language Server
-  use 'neovim/nvim-lspconfig'
-  use "williamboman/mason.nvim" -- Language servers
-  use 'williamboman/mason-lspconfig.nvim'
-  -- use 'Cugatay/nvim-cmp'                -- Real version: hrsh7th/nvim-cmp, yioneko's: yioneko/nvim-cmp
-  use 'yioneko/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'                  -- nvim-cmp source for neovim's built-in LSP
-  use "L3MON4D3/LuaSnip"                      -- Snippet engine requirement
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    requires = {
+      --- Uncomment these if you want to manage LSP servers from neovim
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
+
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' },
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'L3MON4D3/LuaSnip' },
+    }
+  }
+
   use 'hrsh7th/cmp-buffer'                    -- Buffer source for cmp
   use 'saadparwaiz1/cmp_luasnip'              -- Snippet source
   use 'rafamadriz/friendly-snippets'          -- Pre-configured vscode-like snippets
   use 'onsails/lspkind.nvim'                  -- VSCode-like Pictograms
   use 'jose-elias-alvarez/null-ls.nvim'       -- Formatter
   use { 'j-hui/fidget.nvim', tag = 'legacy' } -- LSP Updates UI
-  use "jinzhongjia/LspUI.nvim"                -- Better UI
+  use {                                       -- Better LSP UI
+    "jinzhongjia/LspUI.nvim",
+    branch = 'main',
+  }
   -- use { 'folke/trouble.nvim', config = function()
   --   require("trouble").setup()
   -- end }

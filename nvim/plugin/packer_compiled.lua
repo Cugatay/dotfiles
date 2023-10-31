@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/grapple.nvim",
     url = "https://github.com/cbochs/grapple.nvim"
   },
+  ["lsp-zero.nvim"] = {
+    loaded = true,
+    path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -187,7 +192,7 @@ _G.packer_plugins = {
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/cagataykaydir/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-    url = "https://github.com/yioneko/nvim-cmp"
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
