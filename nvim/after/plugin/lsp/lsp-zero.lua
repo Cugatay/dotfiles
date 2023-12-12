@@ -23,7 +23,8 @@ lsp_zero.on_attach(function(client, bufnr)
   -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
   -- NOTE: I'm using rename and code actions in lspui
-  -- vim.keymap.set("n", "gr", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "gr", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "ga", function() vim.lsp.buf.code_action() end, opts)
 
   -- To enter opened error
   -- map <space>e :lua vim.diagnostic.open_float(0, {scope="line"})<CR>

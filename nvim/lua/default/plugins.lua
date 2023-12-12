@@ -40,15 +40,21 @@ packer.startup(function(use)
     }
   }
 
-  use 'hrsh7th/cmp-buffer'                    -- Buffer source for cmp
-  use 'saadparwaiz1/cmp_luasnip'              -- Snippet source
-  use 'rafamadriz/friendly-snippets'          -- Pre-configured vscode-like snippets
-  use 'onsails/lspkind.nvim'                  -- VSCode-like Pictograms
-  use 'jose-elias-alvarez/null-ls.nvim'       -- Formatter
-  use { 'j-hui/fidget.nvim', tag = 'legacy' } -- LSP Updates UI
-  use {                                       -- Better LSP UI
+  use 'hrsh7th/cmp-buffer'              -- Buffer source for cmp
+  use 'saadparwaiz1/cmp_luasnip'        -- Snippet source
+  use 'rafamadriz/friendly-snippets'    -- Pre-configured vscode-like snippets
+  use 'onsails/lspkind.nvim'            -- VSCode-like Pictograms
+  use 'jose-elias-alvarez/null-ls.nvim' -- Formatter
+  use { 'j-hui/fidget.nvim' }           -- LSP Updates UI
+  use {                                 -- Better LSP UI
     "jinzhongjia/LspUI.nvim",
     branch = 'main',
+    config = function()
+      require("LspUI").setup({
+        -- config options go here
+      })
+    end
+
   }
   -- use { 'folke/trouble.nvim', config = function()
   --   require("trouble").setup()
