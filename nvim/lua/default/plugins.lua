@@ -14,11 +14,11 @@ packer.startup(function(use)
   use 'nvim-lua/plenary.nvim' -- Common utulities
 
   -- Editor Style
-  use 'folke/tokyonight.nvim'                                   -- Theme
-  use 'nvim-lualine/lualine.nvim'                               -- Statusline
-  use 'kyazdani42/nvim-web-devicons'                            -- File icons
-  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- Highlights
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'folke/tokyonight.nvim'                                  -- Theme
+  use 'nvim-lualine/lualine.nvim'                              -- Statusline
+  use 'kyazdani42/nvim-web-devicons'                           -- File icons
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Highlights
+  -- use { "catppuccin/nvim", as = "catppuccin" }
   -- use 'akinsho/nvim-bufferline.lua'                          -- Bufferline
   -- ----------------------------------------------------------
 
@@ -27,17 +27,19 @@ packer.startup(function(use)
   use "williamboman/mason.nvim" -- Language servers
   use 'williamboman/mason-lspconfig.nvim'
   -- use 'Cugatay/nvim-cmp'                -- Real version: hrsh7th/nvim-cmp, yioneko's: yioneko/nvim-cmp
-  use 'yioneko/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'                  -- nvim-cmp source for neovim's built-in LSP
-  use "L3MON4D3/LuaSnip"                      -- Snippet engine requirement
-  use 'hrsh7th/cmp-buffer'                    -- Buffer source for cmp
-  use 'saadparwaiz1/cmp_luasnip'              -- Snippet source
-  use 'rafamadriz/friendly-snippets'          -- Pre-configured vscode-like snippets
-  use 'onsails/lspkind.nvim'                  -- VSCode-like Pictograms
-  use 'jose-elias-alvarez/null-ls.nvim'       -- Formatter
-  use { 'j-hui/fidget.nvim', tag = 'legacy' } -- LSP Updates UI
-  use "jinzhongjia/LspUI.nvim"                -- Better UI
-  -- use { 'folke/trouble.nvim', config = function()
+  -- use 'yioneko/nvim-cmp'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'            -- nvim-cmp source for neovim's built-in LSP
+  use "L3MON4D3/LuaSnip"                -- Snippet engine requirement
+  use 'hrsh7th/cmp-buffer'              -- Buffer source for cmp
+  use 'saadparwaiz1/cmp_luasnip'        -- Snippet source
+  use 'rafamadriz/friendly-snippets'    -- Pre-configured vscode-like snippets
+  use 'onsails/lspkind.nvim'            -- VSCode-like Pictograms
+  use 'jose-elias-alvarez/null-ls.nvim' -- Formatter
+  use { 'j-hui/fidget.nvim' }           -- LSP Updates UI
+  -- use { "jinzhongjia/LspUI.nvim", branch = 'legacy' } -- Better UI
+  use { "jinzhongjia/LspUI.nvim" }      -- Better UI
+  -- use { 'folke/trouble.nvim','legacy'  config = function()
   --   require("trouble").setup()
   -- end }
   -- use { 'simrat39/inlay-hints.nvim', config = function()
@@ -60,14 +62,6 @@ packer.startup(function(use)
   use 'cbochs/grapple.nvim' -- File Workflow
   use 'github/copilot.vim'
 
-  use({
-    "jackMort/ChatGPT.nvim",
-    requires = {
-      "MunifTanjim/nui.nvim",
-      -- "nvim-lua/plenary.nvim",
-      -- "nvim-telescope/telescope.nvim"
-    }
-  })
   -- use { 'RishabhRD/nvim-cheat.sh', requires = { 'RishabhRD/popfix' } }
 
 

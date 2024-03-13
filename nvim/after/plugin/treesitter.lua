@@ -1,7 +1,7 @@
 local ts = require('nvim-treesitter.configs')
 
 ts.setup {
-  ensure_installed = { "lua", "vim", "help", "javascript", "typescript", "rust", "go", "markdown", "markdown_inline" },
+  ensure_installed = { "lua", "vim", --[[ "help", ]] "javascript", "typescript", "rust", "go", "markdown", "markdown_inline" },
 
   sync_install = false,
 
@@ -25,9 +25,6 @@ ts.setup {
   autotag = {
     enable = true,
   },
-
-  context_commentstring = {
-    enable = true
-  }
-
 }
+
+vim.g.skip_ts_context_commentstring_module = true
